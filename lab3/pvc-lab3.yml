@@ -9,7 +9,7 @@ spec:
     requests:
       storage: 1Gi
   volumeName: volume-homecomming-pv
-  storageClassName: "managed-csi"  
+  storageClassName: “managed-csi”
 
 
 
