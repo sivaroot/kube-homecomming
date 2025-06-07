@@ -1,0 +1,15 @@
+services:
+  web_server:
+    container_name: web_server
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    volumes:
+      - ./content:/usr/share/nginx/html
+
+  content_agent:
+    container_name: content_agent
+    image: sivaroot/content-agent:latest 
+    command: sh -c "while true; do echo 'Content Agent Running'; sleep 5; done"
+    volumes:
+      - ./content:/var/webtime
