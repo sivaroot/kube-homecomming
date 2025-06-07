@@ -1,10 +1,11 @@
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: sivaroot-storage
+  name: <name>-sc
 provisioner: disk.csi.azure.com
 parameters:
-  skuName: Standard_LRS          # หรือ Premium_LRS, StandardSSD_LRS
-  kind: Managed                  # ใช้ Managed Disk ของ Azure
-volumeBindingMode: WaitForFirstConsumer
-reclaimPolicy: Delete
+  skuName: StandardSSD_ZRS 	
+  kind: Managed                  			# ใช้ Managed Disk ของ Azure
+volumeBindingMode: WaitForFirstConsumer  	# Immediate,WaitForFirstConsumer
+reclaimPolicy: Delete            			# Retail, Delete
+

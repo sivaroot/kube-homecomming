@@ -1,14 +1,11 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: lab4-volume-sivaroot-pvc	# lab4-volume-<name>-pv
+  name: lab4-volume-<name>-pvc 
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
-  storageClassName: "sivaroot-storage"  # <name>-sc
-
-
-
+      storage: 100Mi
+  storageClassName: <name>-sc

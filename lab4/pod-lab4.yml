@@ -1,21 +1,15 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: lab4-sivaroot-pod 		# lab3-<name>-pod
+  name: lab4-<name>-pod 	
 spec:
-  tolerations:
-    - key: "kubernetes.azure.com/scalesetpriority"
-      operator: "Equal"
-      value: "spot"
-      effect: "NoSchedule"
   containers:
     - name: web-server
       image: nginx
       volumeMounts:
-        - mountPath: /usr/share/nginx/html   	# Path inside the container
-          name: my-storage                   		# Volume name reference
+        - mountPath: /usr/share/nginx/html  
+          name: my-storage                   	
   volumes:
     - name: my-storage
       persistentVolumeClaim:
-        claimName: lab4-volume-sivaroot-pvc       	# Name of the PVC to use
-
+        claimName: lab4-volume-<name>-pvc
