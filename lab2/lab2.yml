@@ -10,9 +10,6 @@ spec:
         - name: content
           mountPath: /usr/share/nginx/html
           readOnly: true
-      ports:
-        - containerPort: 80
-          protocol: TCP
 
     - name: content-agent
       image: sivaroot/content-agent:latest
